@@ -11,10 +11,11 @@ To write a yacc program to recognize a valid arithmetic expression that uses ope
 6.	Compile the yacc program with yacc compiler to produce output file as y.tab.c. eg $ yacc –d arith_id.y
 7.	Compile these with the C compiler as gcc lex.yy.c y.tab.c
 8.	Enter an arithmetic expression as input and the tokens are identified as output.
-# PROGRAM
 
-<h3> cdex3.l </h3>
-'''
+# PROGRAM
+```
+cdex3.l 
+
 %{
 #include "y.tab.h"
 %}
@@ -28,10 +29,11 @@ digit [0-9]
 . { return 0; }
 %%
 int yywrap() { return 1; }
-'''
 
-<h3> cdex3.Y </h3>
-'''
+
+cdex3.Y 
+
+
 %{
 #include <stdio.h>
 #include <stdlib.h>
@@ -48,10 +50,6 @@ term: term '*' factor
 | term '/' factor
 | factor
 ;
-9/24/25, 2:09 PM Ex-3-CD-Lab/README.md at main · hanielreenadr18/Ex-3-CD-Lab
-https://github.com/hanielreenadr18/Ex-3-CD-Lab/blob/main/README.md 2/3
-A YACC program to recognize a valid arithmetic expression that uses operator +,-,* and
-/ is executed successfully and the output is verified.
 factor: '(' expr ')'
 | NUMBER
 ;
@@ -65,8 +63,7 @@ if (yyparse() == 0)
 printf("Valid arithmetic expression.\n");
 return 0;
 }
-'''
-  
+```
 # OUTPUT
 <img width="923" height="569" alt="image" src="https://github.com/user-attachments/assets/ebea53c6-0c8f-4982-b1d0-170a94cfe097" />
 
