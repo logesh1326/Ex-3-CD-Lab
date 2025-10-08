@@ -12,8 +12,9 @@ To write a yacc program to recognize a valid arithmetic expression that uses ope
 7.	Compile these with the C compiler as gcc lex.yy.c y.tab.c
 8.	Enter an arithmetic expression as input and the tokens are identified as output.
 # PROGRAM
-'''
+
 <h3> cdex3.l </h3>
+'''
 %{
 #include "y.tab.h"
 %}
@@ -27,8 +28,10 @@ digit [0-9]
 . { return 0; }
 %%
 int yywrap() { return 1; }
+'''
 
 <h3> cdex3.Y </h3>
+'''
 %{
 #include <stdio.h>
 #include <stdlib.h>
